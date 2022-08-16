@@ -73,7 +73,7 @@ class Application:
         
   def get_scrap_filelist(self):
     scrap_list = []
-    for scrap_file_name in next(os.walk(app.SCRAP_PATH), (None, None, []))[2]:
+    for scrap_file_name in next(os.walk(self.SCRAP_PATH), (None, None, []))[2]:
         scrap_list.append(os.path.join(self.SCRAP_PATH, scrap_file_name)) 
     return scrap_list
 
