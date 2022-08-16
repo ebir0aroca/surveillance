@@ -1,5 +1,5 @@
 
-#@markdown - Scrap Meta Data model
+# Scrap Meta Data model
 
 SCRAP_META = [['scrap_meta', 'guid'], ['scrap_meta', 'date_start'],
             ['scrap_meta', 'maincategory_url'], ['scrap_meta', 'spider_country'],
@@ -7,7 +7,7 @@ SCRAP_META = [['scrap_meta', 'guid'], ['scrap_meta', 'date_start'],
             ['scrap_meta', 'spider_name'], ['scrap_meta', 'spider_version'],
             ['scrap_meta', 'title'], ['scrap_meta', 'spider_date_start']]
 
-#@markdown - Product Data model
+# Product Data model
 product_datamodel = {
                 "sku":str,
                 "title":str,
