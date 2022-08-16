@@ -1,0 +1,173 @@
+marketplace,country,target_col_name,target_col_value,rule_name,filter_name,filter_value
+hornbach,de,category,Bathroom mirror,R1,category4,Badspiegel
+hornbach,de,category,Illuminated bathroom mirror,R2,category4,Badspiegel
+hornbach,de,category,Illuminated bathroom mirror,R2,specs.Ausführung,Lichtspiegel
+hornbach,de,category,Foot bathroom Mirror,R3,category4,Badspiegel
+hornbach,de,category,Foot bathroom Mirror,R3,specs.Ausführung,Standspiegel
+hornbach,de,category,Mirror cabinet,R5,category4,Spiegelschränke
+hornbach,de,category,Illuminated mirror cabinet,R6,category4,Spiegelschränke
+hornbach,de,category,Illuminated mirror cabinet,R6,specs.Variante,Mit Beleuchtung
+hornbach,de,category,Cosmetic mirror,R7,category4,Kosmetikspiegel
+hornbach,de,category,Illuminated cosmetic mirror,R8,category4,Kosmetikspiegel
+hornbach,de,category,Illuminated cosmetic mirror,R8,specs.Art,Beleuchtungsspiegel
+hornbach,de,category,Bathroom lighting,R9,category4,Badleuchten & Spiegelleuchten
+hornbach,de,category,Bathroom lighting,R9,specs.inklusive Leuchtmittel,Ja
+hornbach,se,category,Bathroom mirror,R10,category4,Badrumsspeglar
+hornbach,se,category,Illuminated bathroom mirror,R11,category4,Badrumsspeglar
+hornbach,se,category,Illuminated bathroom mirror,R11,specs.Utförande,Belyst spegel
+hornbach,se,category,Mirror cabinet,R12,category4,Spegelskåp
+hornbach,se,category,Illuminated mirror cabinet,R13,category4,Spegelskåp
+hornbach,se,category,Illuminated mirror cabinet,R13,specs.Variant,Med belysning
+hornbach,se,category,Cosmetic mirror,R14,category5,Sminkspeglar
+hornbach,se,category,Illuminated cosmetic mirror,R15,category5,Sminkspeglar
+hornbach,se,category,Illuminated cosmetic mirror,R15,specs.Typ,Spegel med belysning
+hornbach,se,category,Bathroom lighting,R16,category4,Badrumsbelysning
+hornbach,cz,category,Bathroom mirror,R17,category4,Zrcadla do koupelny
+hornbach,cz,category,Illuminated bathroom mirror,R18,category4,Zrcadla do koupelny
+hornbach,cz,category,Illuminated bathroom mirror,R18,specs.Provedení,Zrcadlo s osvětlením
+hornbach,cz,category,Mirror cabinet,R19,category4,Zrcadlové skříňky
+hornbach,cz,category,Illuminated mirror cabinet,R20,category4,Zrcadlové skříňky
+hornbach,cz,category,Illuminated mirror cabinet,R20,specs.Varianta,S osvětlením
+hornbach,cz,category,Cosmetic mirror,R21,category4,Kosmetická zrcadla
+hornbach,cz,category,Illuminated cosmetic mirror,R22,category4,Kosmetická zrcadla
+hornbach,cz,category,Illuminated cosmetic mirror,R22,specs.Druh,Zrcadlo s osvětlením
+hornbach,cz,category,Bathroom lighting,R23,category5,Osvětlení do koupelny a nad zrcadlo
+hornbach,sk,category,Bathroom mirror,F24,category4,Zrkadlá do kúpeľne
+hornbach,sk,category,Illuminated bathroom mirror,R25,category4,Zrkadlá do kúpeľne
+hornbach,sk,category,Illuminated bathroom mirror,R25,specs.Vyhotovenie,Zrkadlo so svetlom
+hornbach,sk,category,Mirror cabinet,R26,category4,Zrkadlové skrinky
+hornbach,sk,category,Illuminated mirror cabinet,R27,category4,Zrkadlové skrinky
+hornbach,sk,category,Illuminated mirror cabinet,R27,specs.Varianta,S osvetlením
+hornbach,sk,category,Cosmetic mirror,42,category4,Kozmetické zrkadlá
+hornbach,sk,category,Illuminated cosmetic mirror,R28,category4,Kozmetické zrkadlá
+hornbach,sk,category,Illuminated cosmetic mirror,R28,specs.Typ,Zrkadlo s osvetlením
+hornbach,sk,category,Bathroom lighting,R29,category5,Kúpeľňové a zrkadlové svietidlá
+hornbach,ro,category,Bathroom mirror,R30,category4,Oglinzi baie
+hornbach,ro,category,Illuminated bathroom mirror,R31,category4,Oglinzi baie
+hornbach,ro,category,Illuminated bathroom mirror,R31,specs.Model,Oglinda cu iluminare
+hornbach,ro,category,Mirror cabinet,R32,category4,Dulapuri cu oglinda
+hornbach,ro,category,Illuminated mirror cabinet,R33,category4,Dulapuri cu oglinda
+hornbach,ro,category,Illuminated mirror cabinet,R33,specs.Varianta,Cu iluminare
+hornbach,ro,category,Cosmetic mirror,R34,category4,Oglinzi cosmetice
+hornbach,ro,category,Illuminated cosmetic mirror,R35,category4,Oglinzi cosmetice
+hornbach,ro,category,Illuminated cosmetic mirror,R35,specs.Tip,Oglinda cu iluminare
+hornbach,ro,category,Bathroom lighting,R36,category4,Iluminat pentru baie
+hornbach,at,category,Bathroom mirror,R37,category4,Badezimmerspiegel
+hornbach,at,category,Illuminated bathroom mirror,R38,category4,Badezimmerspiegel
+hornbach,at,category,Illuminated bathroom mirror,R38,specs.Ausführung,Lichtspiegel
+hornbach,at,category,Mirror cabinet,R39,category4,Spiegelschränke
+hornbach,at,category,Illuminated mirror cabinet,R40,category4,Spiegelschränke
+hornbach,at,category,Illuminated mirror cabinet,R40,specs.Variante,Mit Beleuchtung
+hornbach,at,category,Cosmetic mirror,R41,category4,Kosmetikspiegel
+hornbach,at,category,Illuminated cosmetic mirror,R42,category4,Kosmetikspiegel
+hornbach,at,category,Illuminated cosmetic mirror,R42,specs.Art,Beleuchtungsspiegel
+hornbach,ch,category,Bathroom mirror,R43,category5,Badezimmerspiegel ohne Beleuchtung
+hornbach,ch,category,Illuminated bathroom mirror,R44,category5,Badezimmerspiegel mit Beleuchtung
+hornbach,ch,category,Mirror cabinet,R45,category4,Spiegelschränke
+hornbach,ch,category,Illuminated mirror cabinet,R46,category4,Spiegelschränke
+hornbach,ch,category,Illuminated mirror cabinet,R46,specs.Variante,Mit Beleuchtung
+hornbach,ch,category,Cosmetic mirror,R47,category2,Kosmetikspiegel
+hornbach,nl,category,Bathroom mirror,R50,category4,Badkamerspiegels
+hornbach,nl,category,Illuminated bathroom mirror,R51,category4,Badkamerspiegels
+hornbach,nl,category,Illuminated bathroom mirror,R51,specs.Uitvoering,Lichtspiegels
+hornbach,nl,category,Mirror cabinet,R52,category4,Badkamerspiegelkasten
+hornbach,nl,category,Illuminated mirror cabinet,R53,category4,Badkamerspiegelkasten
+hornbach,nl,category,Illuminated mirror cabinet,R53,specs.Variant,Met verlichting
+hornbach,nl,category,Cosmetic mirror,R54,category5,Cosmetica spiegels
+obi,de,category,Bathroom mirror,R56,category1,Badspiegel
+obi,de,category,Illuminated bathroom mirror,R57,category1,Badspiegel
+obi,de,category,Illuminated bathroom mirror,R57,specs.Art:,Lichtspiegel
+obi,de,category,Mirror cabinet,R58,category3,Spiegelschränke
+obi,de,category,Illuminated mirror cabinet,R59,category3,Spiegelschränke
+obi,de,category,Illuminated mirror cabinet,R59,specs.Beleuchtung:,LED
+obi,de,category,Illuminated mirror cabinet,R59,specs.Beleuchtung:,Energiesparlampe
+obi,de,category,Illuminated mirror cabinet,R59,specs.Beleuchtung:,Leuchtstofflampe
+obi,de,category,Illuminated mirror cabinet,R59,specs.Beleuchtung:,Halogen
+obi,de,category,Illuminated mirror cabinet,R59,specs.Beleuchtung:,LED-Light-Strip
+obi,de,category,Cosmetic mirror,R60,category2,Kosmetikspiegel
+obi,de,category,Illuminated cosmetic mirror,R61,category2,Kosmetikspiegel
+obi,de,category,Illuminated cosmetic mirror,R61,specs.Beleuchtung:,Ja
+obi,de,category,Bathroom lighting,R62,category2,Zubehör für Spiegel
+obi,de,category,Foot bathroom Mirror,R115,category1,Badspiegel
+obi,de,category,Foot bathroom Mirror,R115,specs.Ausführung:,Standspiegel
+obi,at,category,Bathroom mirror,R63,category1,Badspiegel
+obi,at,category,Illuminated bathroom mirror,R64,category1,Badspiegel
+obi,at,category,Illuminated bathroom mirror,R65,specs.Art:,Lichtspiegel
+obi,at,category,Mirror cabinet,R66,category3,Spiegelschränke
+obi,at,category,Illuminated mirror cabinet,R67,category3,Spiegelschränke
+obi,at,category,Illuminated mirror cabinet,R67,specs.Beleuchtung:,LED-Light-Strip
+obi,at,category,Cosmetic mirror,R68,category2,Kosmetikspiegel
+obi,at,category,Illuminated cosmetic mirror,R69,category2,Kosmetikspiegel
+obi,at,category,Illuminated cosmetic mirror,R69,specs.Beleuchtung:,Ja
+obi,at,category,Bathroom lighting,R70,category2,Zubehör für Spiegel
+obi,at,category,Foot bathroom Mirror,R116,category1,Badspiegel
+obi,at,category,Foot bathroom Mirror,R116,specs.Ausführung:,Standspiegel
+obi,ch,category,Bathroom mirror,R70,category2,Spiegel
+obi,ch,category,Illuminated bathroom mirror,R71,category2,Spiegel
+obi,ch,category,Illuminated bathroom mirror,R71,specs.Art:,Lichtspiegel
+obi,ch,category,Mirror cabinet,R72,category3,Spiegelschränke
+obi,ch,category,Illuminated mirror cabinet,R73,category3,Spiegelschränke
+obi,ch,category,Illuminated mirror cabinet,R73,specs.Beleuchtung:,LED-Light-Strip
+obi,ch,category,Illuminated mirror cabinet,R74,category3,Spiegelschränke
+obi,ch,category,Illuminated mirror cabinet,R74,specs.Beleuchtung:,LED
+obi,ch,category,Illuminated mirror cabinet,R75,category3,Spiegelschränke
+obi,ch,category,Illuminated mirror cabinet,R75,specs.Beleuchtung:,Leuchtstofflampe
+obi,ch,category,Illuminated mirror cabinet,R76,category3,Spiegelschränke
+obi,ch,category,Illuminated mirror cabinet,R76,specs.Beleuchtung:,Leuchtmittel
+obi,ch,category,Illuminated mirror cabinet,R77,category3,Spiegelschränke
+obi,ch,category,Illuminated mirror cabinet,R77,specs.Beleuchtung:,Energiesparlampe
+obi,ch,category,Cosmetic mirror,R78,category2,Kosmetikspiegel
+obi,ch,category,Illuminated cosmetic mirror,R79,category2,Kosmetikspiegel
+obi,ch,category,Illuminated cosmetic mirror,R79,specs.Beleuchtung:,Ja
+obi,ch,category,Bathroom lighting,R80,category2,Zubehör für Spiegel
+obi,ch,category,Bathroom lighting,R80,specs.Art:,Leuchte
+obi,pl,category,Bathroom mirror,R81,category2,Lustra
+obi,pl,category,Illuminated bathroom mirror,R82,category2,Lustra
+obi,pl,category,Illuminated bathroom mirror,R82,specs.Rodzaj:,Lustra z oświetleniem
+obi,pl,category,Mirror cabinet,R83,category3,Szafki z lustrem
+obi,pl,category,Cosmetic mirror,R84,category2,Lusterka kosmetyczne
+obi,cz,category,Bathroom mirror,R85,category2,Zrcadla
+obi,cz,category,Illuminated bathroom mirror,R86,category2,Zrcadla
+obi,cz,category,Illuminated bathroom mirror,R86,specs.Typ:,Zrcadlo s osvětlením
+obi,cz,category,Mirror cabinet,R87,category3,Zrcadlové skříňky
+obi,cz,category,Illuminated mirror cabinet,R88,category3,Zrcadlové skříňky
+obi,cz,category,Illuminated mirror cabinet,R88,specs.Osvětlení:,LED
+obi,cz,category,Illuminated mirror cabinet,R88,specs.Osvětlení:,Zářivka
+obi,cz,category,Illuminated mirror cabinet,R88,specs.Osvětlení:,Úsporná žárovka
+obi,cz,category,Illuminated mirror cabinet,R88,specs.Osvětlení:,Halogen
+obi,cz,category,Cosmetic mirror,R89,category2,Kosmetická zrcátka
+obi,cz,category,Illuminated cosmetic mirror,R90,category2,Kosmetická zrcátka
+obi,cz,category,Illuminated cosmetic mirror,R90,specs.Osvětlení:,Ano
+obi,cz,category,Bathroom lighting,R91,category2,Příslušenství k zrcadlům
+obi,sk,category,Bathroom mirror,R92,category1,Kúpeľňové zrkadlá
+obi,sk,category,Illuminated bathroom mirror,R93,category1,Kúpeľňové zrkadlá
+obi,sk,category,Illuminated bathroom mirror,R93,specs.Druh:,Zrkadlo s osvetlením
+obi,sk,category,Mirror cabinet,R94,category3,Zrkadlové skrinky
+obi,sk,category,Illuminated mirror cabinet,R95,category3,Zrkadlové skrinky
+obi,sk,category,Illuminated mirror cabinet,R95,specs.Osvetlenie:,Žiarivka
+obi,sk,category,Cosmetic mirror,R96,category2,Kozmetické zrkadielka
+obi,sk,category,Bathroom lighting,R98,category2,Príslušenstvo pre zrkadlá
+obi,it,category,Bathroom mirror,R99,category1,Specchi da bagno
+obi,it,category,Illuminated bathroom mirror,R100,category1,Specchi da bagno
+obi,it,category,Illuminated bathroom mirror,R100,specs.Tipo:,Specchio con luce
+obi,it,category,Mirror cabinet,R101,category3,Specchiere
+obi,it,category,Cosmetic mirror,R102,category2,Specchi da trucco
+obi,it,category,Illuminated cosmetic mirror,R103,category2,Specchi da trucco
+obi,hu,category,Bathroom mirror,R104,category1,Fürdőszobatükör
+obi,hu,category,Illuminated bathroom mirror,R105,category1,Fürdőszobatükör
+obi,hu,category,Illuminated bathroom mirror,R105,specs.Világítás:,Igen
+obi,hu,category,Mirror cabinet,R106,category3,Tükrösszekrények
+obi,hu,category,Illuminated mirror cabinet,R117,category3,Tükrösszekrények
+obi,hu,category,Illuminated mirror cabinet,R117,specs.Világítás:,LED
+obi,hu,category,Illuminated mirror cabinet,R117,specs.Világítás:,LED-Light-Strip
+obi,hu,category,Cosmetic mirror,R107,category2,Kozmetikai tükrök
+obi,hu,category,Illuminated cosmetic mirror,R108,category2,Kozmetikai tükrök
+obi,hu,category,Illuminated cosmetic mirror,R108,specs.Világítás:,Igen
+obi,hu,category,Bathroom lighting,R109,category2,Tükrök tartozékai
+obi,hu,category,Bathroom lighting,R109,specs.Típus:,Lámpa
+obi,ru,category,Bathroom mirror,R110,category2,zerkala dlya vannoi komnaty
+obi,ru,category,Illuminated bathroom mirror,R111,category2,zerkala dlya vannoi komnaty
+obi,ru,category,Bathroom lighting,R111,specs.Функциональные особенности:,Подсветка
+obi,ru,category,Mirror cabinet,R112,category2,zerkalnye shkafy
+obi,ru,category,Illuminated mirror cabinet,R114,category2,zerkalnye shkafy
+obi,ru,category,Cosmetic mirror,R113,category2,zerkala dlya makiyazha
