@@ -29,7 +29,7 @@ class Application:
   DBS_PATH = ""
   MAIN_DB_FILEPATH = ""
   log_problems = True
-  delete_main_database = True
+  overwrite_main_database = True
   
 
   def __init__(self, root_path, scrap_path, main_database_filename):
@@ -51,9 +51,11 @@ class Application:
 
 
   def create_infrastucture(self):
-    if self.delete_main_database:
+    if self.overwrite_main_database:
       if os.path.exists(self.MAIN_DB_FILEPATH):
         os.remove(self.MAIN_DB_FILEPATH)
+      else:
+        print("Cannot delete as it doesn't exists")
     
     #@markdown After execution creates folder 'dbs' if not exists
     if not os.path.isdir(self.DBS_PATH):
