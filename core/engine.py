@@ -1,7 +1,15 @@
-import datetime
-import os
-import csv
+try:
+  import pandas as pd  
+  import datetime
+  import os
+  import csv
 
+except ModuleNotFoundError as m_error:
+    print(str(m_error))
+    print('please install the required module and try again...')
+    input('press enter to exit....')
+    exit()
+    
     
 class Application:
   # From github to local
@@ -61,7 +69,6 @@ class Application:
     el = [datetime.datetime.now().strftime('%D %T'), error]
     with open(self.LOG_FILEPATH, 'a', newline='') as f:
         cw = csv.writer(f)
-        #print(Fore.RED + error)
         cw.writerow(el)
 
 SCRAP_META = [['scrap_meta', 'guid'], ['scrap_meta', 'date_start'],
