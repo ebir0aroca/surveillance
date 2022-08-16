@@ -85,10 +85,10 @@ class Application:
   }
   #"cct":float  
 
-  def __init__(self, root_path, scrap_path, main_database_filename):
-    self.ROOT_PATH = root_path
-    self.SCRAP_PATH = scrap_path
-
+  def __init__(self):
+    pass
+  
+  def init(self):
     self.LOG_FILEPATH = os.path.join(self.ROOT_PATH, 'transform_logs', 'log.csv')
     self.TRANSFORMERS_PATH = os.path.join(self.ROOT_PATH, "data/transformers/") 
     self.DBS_PATH = os.path.join(self.SCRAP_PATH, 'dbs')
