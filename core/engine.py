@@ -23,10 +23,12 @@ class Application:
   #   root/out/complete_{date}/logs/output-D({date}})-T({time}).json
   #
   SCRAP_PATH = ""   
-  ROOT_PATH = ""
+  ROOT_DATA_PATH = ""
+  ROOT_CODE_PATH = ""
   LOG_FILEPATH = ""
   TRANSFORMERS_PATH = ""
   DBS_PATH = ""
+  MAIN_DB_FILENAME = "main_database.csv"
   MAIN_DB_FILEPATH = ""
   OVERWRITE_MAIN_DB = True
   SHOW_ERROR_LEVEL = 1 #equals and greater
@@ -89,10 +91,10 @@ class Application:
     pass
   
   def init(self):
-    self.LOG_FILEPATH = os.path.join(self.ROOT_PATH, 'transform_logs', 'log.csv')
-    self.TRANSFORMERS_PATH = os.path.join(self.ROOT_PATH, "data/transformers/") 
+    self.LOG_FILEPATH = os.path.join(self.ROOT_DATA_PATH, 'transform_logs', 'log.csv')
+    self.TRANSFORMERS_PATH = os.path.join(self.ROOT_CODE_PATH, "data/transformers/") 
     self.DBS_PATH = os.path.join(self.SCRAP_PATH, 'dbs')
-    self.MAIN_DB_FILEPATH = os.path.join(self.DBS_PATH, main_database_filename)
+    self.MAIN_DB_FILEPATH = os.path.join(self.DBS_PATH, self.MAIN_DB_FILENAME)
 
   def get_categories_translate_transf(self): 
     return pd.read_csv(os.path.join(self.TRANSFORMERS_PATH, "categories_translate.csv"))  
