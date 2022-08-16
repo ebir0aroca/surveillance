@@ -41,10 +41,10 @@ class Application:
     self.DBS_PATH = os.path.join(self.SCRAP_PATH, 'dbs')
     self.MAIN_DB_FILEPATH = os.path.join(self.DBS_PATH, main_database_filename)
 
-  def categories_translate_transf(self): 
+  def get_categories_translate_transf(self): 
     return pd.read_csv(os.path.join(self.TRANSFORMERS_PATH, "categories_translate.csv"))  
 
-  def store_brands_list(self):
+  def get_store_brands_list(self):
     #Categories transformer configuration file loaded by:  Marketplace, Country, Language
     store_brands_transf = pd.read_csv(os.path.join(self.TRANSFORMERS_PATH, "store_brands.csv"))  
     return store_brands_transf['storebrand_name'].values.tolist()
@@ -67,7 +67,7 @@ class Application:
         print(f'Database file created: {self.MAIN_DB_FILEPATH}')
         main_database.to_csv(self.MAIN_DB_FILEPATH)
 
-  def log_error(error):
+  def add_log_error(error):
     el = [datetime.datetime.now().strftime('%D %T'), error]
     with open(self.LOG_FILEPATH, 'a', newline='') as f:
         cw = csv.writer(f)
