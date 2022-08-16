@@ -3,7 +3,7 @@ import os
 import csv
 
     
-class App:
+class Application:
   # From github to local
   #   data/transformers/categories_translate.csv
   #   data/transformers/store_brands.csv
