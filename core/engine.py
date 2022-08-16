@@ -35,6 +35,7 @@ class Application:
   MAIN_DB_FILEPATH = ""
   OVERWRITE_MAIN_DB = True
   SHOW_ERROR_LEVEL = 1 #equals and greater
+  main_database = pd.DataFrame()
   
   
   SCRAP_META = [['scrap_meta', 'guid'], ['scrap_meta', 'date_start'],
@@ -127,9 +128,9 @@ class Application:
     # deletes the main database if required
     # creates the main database if not exists
     if not os.path.exists(self.MAIN_DB_FILEPATH):
-        main_database = pd.DataFrame()
+        self.main_database = pd.DataFrame()
+        self.main_database.to_csv(self.MAIN_DB_FILEPATH)
         print(f'Database file created: {self.MAIN_DB_FILEPATH}')
-        main_database.to_csv(self.MAIN_DB_FILEPATH)
 
   def add_log_error(self, error, level):
     # 0: informative
