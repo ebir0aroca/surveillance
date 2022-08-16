@@ -20,11 +20,7 @@ except ModuleNotFoundError as m_error:
     print('please install the required module and try again...')
     input('press enter to exit....')
     exit()
-    
-def remove_chars(s):
-    s2 = re.sub(r'[^0-9.,]+', '', s)
-    return s2.replace(",", ".")
-    
+        
 def db_info(df):
   print("Dataset characteristics ")
   print("===========================")
