@@ -53,6 +53,4 @@ product_datamodel = {
 }
 
 
-# Store Brands
-STORE_BRANDS = ['OBI', 'baliv', 'basano']
 #"cct":float,
