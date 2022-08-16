@@ -52,4 +52,7 @@ product_datamodel = {
                 "scrap_meta.title":str
 }
 
+
+# Store Brands
+STORE_BRANDS = ['OBI', 'baliv', 'basano']
 #"cct":float,
