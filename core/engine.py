@@ -98,7 +98,12 @@ class Application:
     self.SCRAP_PATH = os.path.join(self.ROOT_DATA_PATH, self.SCRAP_FOLDER) 
     self.DBS_PATH = os.path.join(self.SCRAP_PATH, 'dbs')
     self.MAIN_DB_FILEPATH = os.path.join(self.DBS_PATH, self.MAIN_DB_FILENAME)
-
+  
+  
+  def remove_chars(s):
+    s2 = re.sub(r'[^0-9.,]+', '', s)
+    return s2.replace(",", ".")
+  
   def get_categories_translate_transf(self): 
     return pd.read_csv(os.path.join(self.TRANSFORMERS_PATH, "categories_translate.csv"))  
 
@@ -236,10 +241,10 @@ class Application:
     #NaN values
     scrap_df.loc[:,'brand'] = scrap_df['brand'].fillna('')
     scrap_df.loc[:,'specialPrice'] = scrap_df['specialPrice'].replace(np.nan,  "0.00")
-    scrap_df.loc[:,'specialPrice'] = scrap_df['specialPrice'].apply(datamining.remove_chars)
+    scrap_df.loc[:,'specialPrice'] = scrap_df['specialPrice'].apply(Application.remove_chars)
     scrap_df.loc[:,'specialPrice'] = scrap_df['specialPrice'].replace("", "0.00")   
     scrap_df.loc[:,'price'] = scrap_df['price'].replace(np.nan, 0.00) 
-    scrap_df.loc[:,'price'] = scrap_df['price'].apply(datamining.remove_chars)  
+    scrap_df.loc[:,'price'] = scrap_df['price'].apply(Application.remove_chars)  
     scrap_df.loc[:,'price'] = scrap_df['price'].replace("",  0.00)
     scrap_df.loc[:,'reviews_rating'] = scrap_df['reviews_rating'].replace("",  0.00) 
     scrap_df.loc[:,'reviews_rating'] = scrap_df['reviews_rating'].replace(np.nan, 0.00)
