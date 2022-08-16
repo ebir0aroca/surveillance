@@ -70,11 +70,18 @@ class Application:
     with open(self.LOG_FILEPATH, 'a', newline='') as f:
         cw = csv.writer(f)
         cw.writerow(el)
+        
+  def get_scrap_filelist(self):
+    scrap_list = []
+    for scrap_file_name in next(os.walk(app.SCRAP_PATH), (None, None, []))[2]:
+        scrap_list.append(os.path.join(self.SCRAP_PATH, scrap_file_name)) 
+    return scrap_list
 
 SCRAP_META = [['scrap_meta', 'guid'], ['scrap_meta', 'date_start'],
             ['scrap_meta', 'maincategory_url'], ['scrap_meta', 'spider_country'],
             ['scrap_meta', 'spider_date_end'], ['scrap_meta', 'spider_marketplace'],
             ['scrap_meta', 'spider_name'], ['scrap_meta', 'spider_version'],
             ['scrap_meta', 'title'], ['scrap_meta', 'spider_date_start']]
+
 
 
