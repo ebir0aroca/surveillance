@@ -120,7 +120,7 @@ class Application:
         print(f'Database file created: {self.MAIN_DB_FILEPATH}')
         main_database.to_csv(self.MAIN_DB_FILEPATH)
 
-  def add_log_error(error, level):
+  def add_log_error(self, error, level):
     # 0: informative
     # 1: mistakes
     # 2: error
