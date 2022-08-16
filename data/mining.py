@@ -1,4 +1,5 @@
 try:
+  import re
   import pandas as pd  
   import numpy as np     
   import datetime
@@ -20,7 +21,9 @@ except ModuleNotFoundError as m_error:
     input('press enter to exit....')
     exit()
     
-    
+def remove_chars(s):
+    s2 = re.sub(r'[^0-9.,]+', '', s)
+    return s2.replace(",", ".")
     
 def db_info(df):
   print("Dataset characteristics ")
