@@ -94,7 +94,7 @@ class Application:
   def init(self):
     self.LOG_FILEPATH = os.path.join(self.ROOT_DATA_PATH, 'transform_logs', 'log.csv')
     self.TRANSFORMERS_PATH = os.path.join(self.ROOT_CODE_PATH, "data/transformers/") 
-    self.SCRAP_PATH = os.path.join(self.ROOT_DATA_PATH, SCRAP_FOLDER) 
+    self.SCRAP_PATH = os.path.join(self.ROOT_DATA_PATH, self.SCRAP_FOLDER) 
     self.DBS_PATH = os.path.join(self.SCRAP_PATH, 'dbs')
     self.MAIN_DB_FILEPATH = os.path.join(self.DBS_PATH, self.MAIN_DB_FILENAME)
 
