@@ -22,6 +22,7 @@ class Application:
   #   root/out/complete_{date}/logs/
   #   root/out/complete_{date}/logs/output-D({date}})-T({time}).json
   #
+  SCRAP_FOLDER = ""
   SCRAP_PATH = ""   
   ROOT_DATA_PATH = ""
   ROOT_CODE_PATH = ""
@@ -93,6 +94,7 @@ class Application:
   def init(self):
     self.LOG_FILEPATH = os.path.join(self.ROOT_DATA_PATH, 'transform_logs', 'log.csv')
     self.TRANSFORMERS_PATH = os.path.join(self.ROOT_CODE_PATH, "data/transformers/") 
+    self.SCRAP_PATH = os.path.join(self.ROOT_CODE_PATH, "data/transformers/") 
     self.DBS_PATH = os.path.join(self.SCRAP_PATH, 'dbs')
     self.MAIN_DB_FILEPATH = os.path.join(self.DBS_PATH, self.MAIN_DB_FILENAME)
 
