@@ -30,7 +30,7 @@ class Application:
   MAIN_DB_FILEPATH = ""
   log_problems = True
   overwrite_main_database = True
-  min_show_error_level = 1 #equals and greater
+  SHOW_ERROR_LEVEL = 1 #equals and greater
   
   
   SCRAP_META = [['scrap_meta', 'guid'], ['scrap_meta', 'date_start'],
@@ -145,7 +145,6 @@ class Application:
       if(type(scrap_df.at[i,'breadcrumbs'])==list):
           for j in range(len(scrap_df.at[i,'breadcrumbs'])):
             scrap_df.at[i,'category'+str(j)] = scrap_df.at[i,'breadcrumbs'][j]
-    print("Breadcrumbs split to categories. ")
 
 
     # 1.2. Translate categories from different Marketplace, Country and Language
@@ -155,9 +154,9 @@ class Application:
     #       target_col_value          (e.g. Illuminated bathroom mirror)
     # 			  rule_name               (e.g. R48)
     #  results ---> index             (e.g. 111)
-    marketplace, country= scrap_df.tail(1)["scrap_meta.spider_marketplace"].values[0], scrap_df.tail(1)["scrap_meta.spider_country"].values[0]
-    print("Marketplace and country from the scrap data: " + marketplace + "." + country)
+    marketplace, country= scrap_df.tail(1)["scrap_meta.spider_marketplace"].values[0], scrap_df.tail(1)["scrap_meta.spider_country"].values[0]    
     result_df = pd.DataFrame()
+    self.add_log_error("Marketplace and country from the scrap data: " + marketplace + "." + country, 0)
     
     rules0 = (categories_translate_tf['marketplace']==marketplace) & (categories_translate_tf['country']==country)
     target_col_names = categories_translate_tf[rules0]['target_col_name'].unique()
