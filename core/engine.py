@@ -29,7 +29,7 @@ class Application:
   DBS_PATH = ""
   MAIN_DB_FILEPATH = ""
   log_problems = True
-  overwrite_main_database = True
+  OVERWRITE_MAIN_DB = True
   SHOW_ERROR_LEVEL = 1 #equals and greater
   
   
