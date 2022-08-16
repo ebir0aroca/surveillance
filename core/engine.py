@@ -130,7 +130,7 @@ class Application:
     with open(self.LOG_FILEPATH, 'a', newline='') as f:
         cw = csv.writer(f)
         cw.writerow(el)
-    if(level>=self.min_show_error_level) 
+    if(level>=self.min_show_error_level):
         print(error)
         
   def get_scrap_filelist(self):
