@@ -4,6 +4,7 @@ try:
   import datetime
   import os
   import csv
+  import re
 
 except ModuleNotFoundError as m_error:
     print(str(m_error))
