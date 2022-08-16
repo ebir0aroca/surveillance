@@ -28,7 +28,6 @@ class Application:
   TRANSFORMERS_PATH = ""
   DBS_PATH = ""
   MAIN_DB_FILEPATH = ""
-  log_problems = True
   OVERWRITE_MAIN_DB = True
   SHOW_ERROR_LEVEL = 1 #equals and greater
   
@@ -105,7 +104,7 @@ class Application:
 
 
   def create_infrastucture(self):
-    if self.overwrite_main_database:
+    if self.OVERWRITE_MAIN_DB:
       if os.path.exists(self.MAIN_DB_FILEPATH):
         os.remove(self.MAIN_DB_FILEPATH)
       else:
