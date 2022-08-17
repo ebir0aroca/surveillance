@@ -147,7 +147,7 @@ class Application:
     with open(self.LOG_FILEPATH, 'a', newline='') as f:
         cw = csv.writer(f)
         cw.writerow(el)
-    if(level.value>=self.SHOW_ERROR_LEVEL.value):
+    if(level>=self.SHOW_ERROR_LEVEL.value):
         print(error)
         
         
