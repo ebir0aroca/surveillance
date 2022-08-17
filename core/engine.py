@@ -304,18 +304,18 @@ class Application:
       
       #transform the data
       clean_scrap_db = scrap_db
-      clean_scrap_db = app.translate_categories(clean_scrap_db, scrap_filepath, self.get_categories_translate_transf())
-      clean_scrap_db = app.set_default_values(clean_scrap_db, scrap_filepath)
-      clean_scrap_db = app.set_isStoreBrand(clean_scrap_db, scrap_filepath, self.get_store_brands_list())
-      clean_scrap_db = app.delete_irrelevant_data(clean_scrap_db, scrap_filepath)
-      clean_scrap_db = app.set_data_types(clean_scrap_db, scrap_filepath, self.PRODUCT_DATAMODEL)
+      clean_scrap_db = self.translate_categories(clean_scrap_db, scrap_filepath, self.get_categories_translate_transf())
+      clean_scrap_db = self.set_default_values(clean_scrap_db, scrap_filepath)
+      clean_scrap_db = self.set_isStoreBrand(clean_scrap_db, scrap_filepath, self.get_store_brands_list())
+      clean_scrap_db = self.delete_irrelevant_data(clean_scrap_db, scrap_filepath)
+      clean_scrap_db = self.set_data_types(clean_scrap_db, scrap_filepath, self.PRODUCT_DATAMODEL)
 
       #append to the database
-      app.main_database = app.main_database.append(clean_scrap_db, ignore_index=True)
+      self.main_database = self.main_database.append(clean_scrap_db, ignore_index=True)
       self.add_log_error("Appended database: {} \n".format(scrap_filepath), 0) 
 
       #delete unnecessary cols
-      del_columns = [col for col in app.main_database if 'Unnamed' in col]
+      del_columns = [col for col in self.main_database if 'Unnamed' in col]
       self.main_database.drop(columns=del_columns, inplace=True)
 
       #img_urls (I don't know why, but I have to do this here)
