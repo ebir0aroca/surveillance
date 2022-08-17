@@ -329,14 +329,14 @@ class Application:
         except Exception as err:
           pass
           print("err: {} ".format(err))
-          print(main_database.loc[index, 'img_urls']) 
+          self.add_log_error(main_database.loc[index, 'img_urls'], 2) 
 
       main_database["marketplace"] = main_database["scrap_meta.spider_marketplace"]
       main_database["country"] = main_database["scrap_meta.spider_country"]
 
       #save to dbs folder
       main_database.to_csv(self.MAIN_DB_FILEPATH)
-      add_log_error("Database saved to CSV: {}.\n".format(scrap_filepath), 0) 
+      self.add_log_error("Database saved to CSV: {}.\n".format(scrap_filepath), 0) 
 
   def load_database(self):    
     self.add_log_error(f'Database file loaded: {self.MAIN_DB_FILEPATH}')
