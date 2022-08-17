@@ -335,11 +335,13 @@ class Application:
       main_database["country"] = main_database["scrap_meta.spider_country"]
 
       #save to dbs folder
-      main_database.to_csv(self.MAIN_DB_FILEPATH)
-      self.add_log("Database saved to CSV: {}.\n".format(scrap_filepath), 0) 
+      
+      with open(self.MAIN_DB_FILEPATH, "wb") as f:
+        main_database.to_csv(f)
+        self.add_log("Database saved to CSV: {}.\n".format(scrap_filepath), 0) 
 
   def load_database(self):    
     self.add_log(f'Database file loaded: {self.MAIN_DB_FILEPATH}', 0)
     with open(self.MAIN_DB_FILEPATH, "r") as f:
-      database = pd.read_csv(f)
-    return database
+      main_database = pd.read_csv(f)
+    return main_database
