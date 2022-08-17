@@ -1,4 +1,10 @@
 # SURVEILLANCE
+Pipeline:
+1. Scrapping process
+2. Cleaning each scrap & translate categories 
+3. Consolidation in single database
+
+
 ## Data Structure
 ---------------------------
 * MyDrive/root/	
