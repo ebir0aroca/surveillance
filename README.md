@@ -1,5 +1,5 @@
-# surveillance
-## DATA STRUCTURE
+# SURVEILLANCE
+## Data Structure
 ---------------------------
 * MyDrive/root/	
 	* /out/complete_{date} #folder with all scrap to be cleaned and consolidated			
@@ -10,9 +10,12 @@
 			* maindatabase.csv
 	* analyze_marketplaces.ipynb
 
-## CLOUD CODE
+## Code Structure
 ---------------------------
 * /content//content/surveillance
   * /core
+  	* engine.py
   * /data
+  	* mining.py
+  	* standards.py
 
