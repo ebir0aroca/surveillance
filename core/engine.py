@@ -217,7 +217,7 @@ class Application:
                   "    Rule Name: {}\n".format(rule_name) +
                   "    Scrapper {}.{} \n".format(marketplace, country) +
                   "        Target: ['{}'] == '{}']  \n".format(target_col_name, target_col_value) +
-                  "        Filter: ['{}'] == '{}'] \n".format(filter_name, filter_value), Error_Level.Warning)
+                  "        Filter: ['{}'] == '{}'] \n".format(filter_name, filter_value), 1) #Error_Level.Warning
           
           if not avoidRule:
             #create a copy to prevent pandas' SettingWithCopyWarning
@@ -232,7 +232,7 @@ class Application:
                   "    Rule Name: {}\n".format(rule_name) +
                   "    Scrapper {}.{} \n".format(marketplace, country) +
                   "        Target: ['{}'] == '{}']  \n".format(target_col_name, target_col_value) +
-                  "        Filter: ['{}'] == '{}'] \n".format(filter_name, filter_value), Error_Level.Warning)
+                  "        Filter: ['{}'] == '{}'] \n".format(filter_name, filter_value), 1) #Error_Level.Warning
               
             result_df = result_df.append(joined_df)
 
