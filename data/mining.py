@@ -169,6 +169,13 @@ def info(df, title):
   
   print("")
         
+def show_quantiles(df):
+  print(f'Quantile 25%:',df.quantile(0.25))
+  print(f'Quantile 50%:',df.quantile(0.50))
+  print(f'Quantile 75%:',df.quantile(0.75))
+  print(f'Mean:', df.mean())
+  print(f'Min:', df.min())
+  print(f'Max:', df.max())
 
 def tablesummary_by_sku(dataframe, groupby):
   _df = dataframe.groupby([groupby]).agg({'sku': 'count'})
