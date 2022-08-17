@@ -12,7 +12,13 @@ except ModuleNotFoundError as m_error:
     input('press enter to exit....')
     exit()
     
-    
+from enum import Enum
+class Error_Level(Enum):
+  Informative = 0
+  Warning = 1
+  Critical = 2
+
+
 class Application:
   # From github to local
   #   data/transformers/categories_translate.csv
@@ -207,12 +213,12 @@ class Application:
 
             else:
               avoidRule = True 
-              self.add_log_error(":::RULE IS WRONG. THE FILTER_NAME DOES NOT CORRESPOND WITH ANY SCRAPPED COLUMN :::", 1)
-              self.add_log_error("    Please check the configuration file", 1)
-              self.add_log_error("    Rule Name: {}".format(rule_name), 1)            
-              self.add_log_error("    Scrapper {}.{} ".format(marketplace, country), 1)
-              self.add_log_error("        Target: ['{}'] == '{}']  ".format(target_col_name, target_col_value), 1)
-              self.add_log_error("        Filter: ['{}'] == '{}'] ".format(filter_name, filter_value), 1)
+              self.add_log_error(":::RULE IS WRONG. THE FILTER_NAME DOES NOT CORRESPOND WITH ANY SCRAPPED COLUMN :::\n" + 
+                  "    Please check the configuration \n" +
+                  "    Rule Name: {}\n".format(rule_name) +
+                  "    Scrapper {}.{} \n".format(marketplace, country) +
+                  "        Target: ['{}'] == '{}']  \n".format(target_col_name, target_col_value) +
+                  "        Filter: ['{}'] == '{}'] \n".format(filter_name, filter_value), Error_Level.Warning)
           
           if not avoidRule:
             #create a copy to prevent pandas' SettingWithCopyWarning
@@ -222,11 +228,12 @@ class Application:
               joined_df.loc[:, target_col_name] =  target_col_value
               
             else:
-              self.add_log_error(":::THE RESULT IS EMPTY, MAKE SURE THERE'S NO DATA IN THE WEBSITE:::", 1)
-              self.add_log_error("    Rule Name: {}".format(rule_name), 1)
-              self.add_log_error("    Scrapper {}.{} ".format(marketplace, country), 1)
-              self.add_log_error("        Target: ['{}'] == '{}']  ".format(target_col_name, target_col_value), 1)
-              self.add_log_error("        Filter: ['{}'] == '{}']  ".format(filter_name, filter_value), 1)
+              self.add_log_error(":::THE RESULT IS EMPTY, MAKE SURE THERE'S NO DATA IN THE WEBSITE:::\n" + 
+                  "    Rule Name: {}\n".format(rule_name) +
+                  "    Scrapper {}.{} \n".format(marketplace, country) +
+                  "        Target: ['{}'] == '{}']  \n".format(target_col_name, target_col_value) +
+                  "        Filter: ['{}'] == '{}'] \n".format(filter_name, filter_value), Error_Level.Warning)
+              
             result_df = result_df.append(joined_df)
 
     #engine.add_log_error
