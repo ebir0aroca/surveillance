@@ -27,7 +27,9 @@ def db_info(df):
   if 'scrap_meta.spider_date_end' in df.columns:
     print("Data scrap_meta.spider_date_end: ")
     print(df['scrap_meta.spider_date_end'].unique())
-
+  
+  print("Source Category URL: ") 
+  print(df['source_category_url'])  
   print("Data retailers: ") 
   print(df['scrap_meta.spider_marketplace'].unique())
   print("")
