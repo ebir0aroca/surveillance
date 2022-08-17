@@ -340,4 +340,6 @@ class Application:
 
   def load_database(self):    
     self.add_log(f'Database file loaded: {self.MAIN_DB_FILEPATH}', 0)
-    return pd.read_csv(self.MAIN_DB_FILEPATH)
+    with open(self.MAIN_DB_FILEPATH, "r") as f:
+      database = pd.read_csv(f)
+    return database
