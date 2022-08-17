@@ -12,12 +12,6 @@ except ModuleNotFoundError as m_error:
     input('press enter to exit....')
     exit()
     
-from enum import Enum
-class Error_Level(Enum):
-  Informative = 0
-  Warning = 1
-  Critical = 2
-
 
 class Application:
   # From github to local
@@ -40,7 +34,11 @@ class Application:
   MAIN_DB_FILENAME = "main_database.csv"
   MAIN_DB_FILEPATH = ""
   OVERWRITE_MAIN_DB = True
-  SHOW_ERROR_LEVEL = Error_Level.Warning #equals and greater
+  # Error Levels:
+  #  - Informative  = 0
+  #  - Warning      = 1
+  #  - Critical     = 2
+  SHOW_ERROR_LEVEL = 1 # Default: Show Warnings and critical only
   main_database = pd.DataFrame()
   
   
@@ -139,15 +137,14 @@ class Application:
         print(f'Database file created: {self.MAIN_DB_FILEPATH}')
 
   def add_log_error(self, error, level):
-    # 0: informative
-    # 1: mistakes
-    # 2: error
-    # 3: critical
+    #   Informative = 0
+    #   Warning = 1
+    #   Critical = 2
     el = [level, datetime.datetime.now().strftime('%D %T'), error]
     with open(self.LOG_FILEPATH, 'a', newline='') as f:
         cw = csv.writer(f)
         cw.writerow(el)
-    if(level>=self.SHOW_ERROR_LEVEL.value):
+    if(level>=self.SHOW_ERROR_LEVEL):
         print(error)
         
         
