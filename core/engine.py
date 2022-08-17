@@ -133,8 +133,8 @@ class Application:
     # deletes the main database if required
     # creates the main database if not exists
     if not os.path.exists(self.MAIN_DB_FILEPATH):
-        self.main_database = pd.DataFrame()
-        self.main_database.to_csv(self.MAIN_DB_FILEPATH)
+        main_database = pd.DataFrame()
+        main_database.to_csv(self.MAIN_DB_FILEPATH)
         print(f'Database file created: {self.MAIN_DB_FILEPATH}')
 
   def add_log_error(self, error, level):
@@ -290,7 +290,9 @@ class Application:
   def set_data_types(self, scrap_df, scrap_filepath, product_datamodel):
     return scrap_df.astype(product_datamodel)
   
-  def clean_all_scraps(self):
+  def clean_all_scraps(self):    
+    main_database = pd.DataFrame()
+    
     for scrap_filepath in self.get_scrap_filelist():
       #load and normalize data with scrap_meta
       with open(scrap_filepath, 'r', encoding='utf-8') as json_file:
@@ -310,31 +312,31 @@ class Application:
       clean_scrap_db = self.set_data_types(clean_scrap_db, scrap_filepath, self.PRODUCT_DATAMODEL)
 
       #append to the database
-      self.main_database = self.main_database.append(clean_scrap_db, ignore_index=True)
+      main_database = main_database.append(clean_scrap_db, ignore_index=True)
       self.add_log_error("Appended database: {} \n".format(scrap_filepath), 0) 
 
       #delete unnecessary cols
-      del_columns = [col for col in self.main_database if 'Unnamed' in col]
-      self.main_database.drop(columns=del_columns, inplace=True)
+      del_columns = [col for col in main_database if 'Unnamed' in col]
+      main_database.drop(columns=del_columns, inplace=True)
 
       #img_urls (I don't know why, but I have to do this here)
       #if I do it literal in another dataframe, it gives a 
       #ValueError: malformed node or string:
-      for index, row in self.main_database.iterrows():
+      for index, row in main_database.iterrows():
         try:
           str_arr = self.main_database.loc[index, 'img_urls']
-          self.main_database.loc[index, 'img_url'] = ast.literal_eval(str_arr)[0]
+          main_database.loc[index, 'img_url'] = ast.literal_eval(str_arr)[0]
         except Exception as err:
           pass
           print("err: {} ".format(err))
-          print(self.main_database.loc[index, 'img_urls']) 
+          print(main_database.loc[index, 'img_urls']) 
 
-      self.main_database["marketplace"] = self.main_database["scrap_meta.spider_marketplace"]
-      self.main_database["country"] = self.main_database["scrap_meta.spider_country"]
+      main_database["marketplace"] = main_database["scrap_meta.spider_marketplace"]
+      main_database["country"] = main_database["scrap_meta.spider_country"]
 
       #save to dbs folder
-      self.main_database.to_csv(self.MAIN_DB_FILEPATH)
-      self.add_log_error("Database saved to CSV: {}.\n".format(scrap_filepath), 0) 
+      main_database.to_csv(self.MAIN_DB_FILEPATH)
+      add_log_error("Database saved to CSV: {}.\n".format(scrap_filepath), 0) 
 
   def load_database(self):    
     self.add_log_error(f'Database file loaded: {self.MAIN_DB_FILEPATH}')
