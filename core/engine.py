@@ -41,7 +41,6 @@ class Application:
   #  - Warning      = 1
   #  - Critical     = 2
   SHOW_ERROR_LEVEL = 1 # Default: Show Warnings and critical only
-  main_database = pd.DataFrame()
   
   
   SCRAP_META = [['scrap_meta', 'guid'], ['scrap_meta', 'date_start'],
@@ -337,3 +336,6 @@ class Application:
       self.main_database.to_csv(self.MAIN_DB_FILEPATH)
       self.add_log_error("Database saved to CSV: {}.\n".format(scrap_filepath), 0) 
 
+  def load_database(self):    
+    self.add_log_error(f'Database file loaded: {self.MAIN_DB_FILEPATH}')
+    return pd.read_csv(self.MAIN_DB_FILEPATH)
