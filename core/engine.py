@@ -339,5 +339,5 @@ class Application:
       self.add_log_error("Database saved to CSV: {}.\n".format(scrap_filepath), 0) 
 
   def load_database(self):    
-    self.add_log_error(f'Database file loaded: {self.MAIN_DB_FILEPATH}')
+    self.add_log_error(f'Database file loaded: {self.MAIN_DB_FILEPATH}', 0)
     return pd.read_csv(self.MAIN_DB_FILEPATH)
