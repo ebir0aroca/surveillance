@@ -125,18 +125,17 @@ class Application:
     store_brands_transf = pd.read_csv(os.path.join(self.TRANSFORMERS_PATH, "store_brands.csv"))  
     return store_brands_transf['storebrand_name'].values.tolist()
 
+  def del_database(self):
+    if os.path.exists(self.MAIN_DB_FILEPATH):
+      os.remove(self.MAIN_DB_FILEPATH)
+    else:
+      print("Cannot delete as it doesn't exists")
 
-  def create_infrastucture(self):
-    if self.OVERWRITE_MAIN_DB:
-      if os.path.exists(self.MAIN_DB_FILEPATH):
-        os.remove(self.MAIN_DB_FILEPATH)
-      else:
-        print("Cannot delete as it doesn't exists")
     
-    #@markdown After execution creates folder 'dbs' if not exists
+  def create_infrastucture(self):
+    # Creates folder 'dbs' if not exists
     if not os.path.isdir(self.DBS_PATH):
       os.mkdir(self.DBS_PATH)
-    # deletes the main database if required
     # creates the main database if not exists
     if not os.path.exists(self.MAIN_DB_FILEPATH):
         main_database = pd.DataFrame()
