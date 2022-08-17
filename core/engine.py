@@ -40,7 +40,7 @@ class Application:
   MAIN_DB_FILENAME = "main_database.csv"
   MAIN_DB_FILEPATH = ""
   OVERWRITE_MAIN_DB = True
-  SHOW_ERROR_LEVEL = 1 #equals and greater
+  SHOW_ERROR_LEVEL = Error_Level.Warning #equals and greater
   main_database = pd.DataFrame()
   
   
@@ -147,8 +147,9 @@ class Application:
     with open(self.LOG_FILEPATH, 'a', newline='') as f:
         cw = csv.writer(f)
         cw.writerow(el)
-    if(level>=self.SHOW_ERROR_LEVEL):
+    if(level.value>=self.SHOW_ERROR_LEVEL.value):
         print(error)
+        
         
   def get_scrap_filelist(self):
     scrap_list = []
