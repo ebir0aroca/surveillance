@@ -137,7 +137,7 @@ class Application:
         main_database.to_csv(self.MAIN_DB_FILEPATH)
         print(f'Database file created: {self.MAIN_DB_FILEPATH}')
 
-  def add_log_error(self, error, level):
+  def add_log(self, error, level):
     #   Informative = 0
     #   Warning = 1
     #   Critical = 2
@@ -172,7 +172,7 @@ class Application:
     #  results ---> index             (e.g. 111)
     marketplace, country= scrap_df.tail(1)["scrap_meta.spider_marketplace"].values[0], scrap_df.tail(1)["scrap_meta.spider_country"].values[0]    
     result_df = pd.DataFrame()
-    self.add_log_error("Marketplace and country from the scrap data: " + marketplace + "." + country, 0)
+    self.add_log("Marketplace and country from the scrap data: " + marketplace + "." + country, 0)
     
     rules0 = (categories_translate_tf['marketplace']==marketplace) & (categories_translate_tf['country']==country)
     target_col_names = categories_translate_tf[rules0]['target_col_name'].unique()
@@ -212,7 +212,7 @@ class Application:
 
             else:
               avoidRule = True 
-              self.add_log_error(":::RULE IS WRONG. THE FILTER_NAME DOES NOT CORRESPOND WITH ANY SCRAPPED COLUMN :::\n" + 
+              self.add_log(":::RULE IS WRONG. THE FILTER_NAME DOES NOT CORRESPOND WITH ANY SCRAPPED COLUMN :::\n" + 
                   "    Please check the configuration \n" +
                   "    Scrap path: {}\n".format(scrap_filepath) +                                 
                   "    Rule Name: {}\n".format(rule_name) +
@@ -228,7 +228,7 @@ class Application:
               joined_df.loc[:, target_col_name] =  target_col_value
               
             else:
-              self.add_log_error(":::THE RESULT IS EMPTY, MAKE SURE THERE'S NO DATA IN THE WEBSITE:::\n" + 
+              self.add_log(":::THE RESULT IS EMPTY, MAKE SURE THERE'S NO DATA IN THE WEBSITE:::\n" + 
                   "    Scrap path: {}\n".format(scrap_filepath) +   
                   "    Rule Name: {}\n".format(rule_name) +
                   "    Scrapper {}.{} \n".format(marketplace, country) +
@@ -237,7 +237,7 @@ class Application:
               
             result_df = result_df.append(joined_df)
 
-    #engine.add_log_error
+    #engine.add_log
     return result_df
 
   def set_default_values(self, scrap_df, scrap_filepath):   
@@ -313,7 +313,7 @@ class Application:
 
       #append to the database
       main_database = main_database.append(clean_scrap_db, ignore_index=True)
-      self.add_log_error("Appended database: {} \n".format(scrap_filepath), 0) 
+      self.add_log("Appended database: {} \n".format(scrap_filepath), 0) 
 
       #delete unnecessary cols
       del_columns = [col for col in main_database if 'Unnamed' in col]
@@ -329,15 +329,15 @@ class Application:
         except Exception as err:
           pass
           print("err: {} ".format(err))
-          self.add_log_error(main_database.loc[index, 'img_urls'], 2) 
+          self.add_log(main_database.loc[index, 'img_urls'], 2) 
 
       main_database["marketplace"] = main_database["scrap_meta.spider_marketplace"]
       main_database["country"] = main_database["scrap_meta.spider_country"]
 
       #save to dbs folder
       main_database.to_csv(self.MAIN_DB_FILEPATH)
-      self.add_log_error("Database saved to CSV: {}.\n".format(scrap_filepath), 0) 
+      self.add_log("Database saved to CSV: {}.\n".format(scrap_filepath), 0) 
 
   def load_database(self):    
-    self.add_log_error(f'Database file loaded: {self.MAIN_DB_FILEPATH}', 0)
+    self.add_log(f'Database file loaded: {self.MAIN_DB_FILEPATH}', 0)
     return pd.read_csv(self.MAIN_DB_FILEPATH)
