@@ -4,6 +4,7 @@ try:
   import datetime
   import os
   import csv
+  import ast
   import re
 
 except ModuleNotFoundError as m_error:
@@ -288,4 +289,50 @@ class Application:
 
   def set_data_types(self, scrap_df, scrap_filepath, product_datamodel):
     return scrap_df.astype(product_datamodel)
+  
+  def clean_all_scraps(self):
+    for scrap_filepath in self.get_scrap_filelist():
+      #load and normalize data with scrap_meta
+      with open(scrap_filepath, 'r', encoding='utf-8') as json_file:
+        data = json.load(json_file)  
+        scrap_db =  pd.DataFrame()
+        scrap_db = pd.json_normalize(
+                  data, record_path=['scraped_products_data'], 
+                  meta=Application.SCRAP_META
+                )
+      
+      #transform the data
+      clean_scrap_db = scrap_db
+      clean_scrap_db = app.translate_categories(clean_scrap_db, scrap_filepath, self.get_categories_translate_transf())
+      clean_scrap_db = app.set_default_values(clean_scrap_db, scrap_filepath)
+      clean_scrap_db = app.set_isStoreBrand(clean_scrap_db, scrap_filepath, self.get_store_brands_list())
+      clean_scrap_db = app.delete_irrelevant_data(clean_scrap_db, scrap_filepath)
+      clean_scrap_db = app.set_data_types(clean_scrap_db, scrap_filepath, self.PRODUCT_DATAMODEL)
+
+      #append to the database
+      app.main_database = app.main_database.append(clean_scrap_db, ignore_index=True)
+      self.add_log_error("Appended database: {} \n".format(scrap_filepath), 0) 
+
+      #delete unnecessary cols
+      del_columns = [col for col in app.main_database if 'Unnamed' in col]
+      self.main_database.drop(columns=del_columns, inplace=True)
+
+      #img_urls (I don't know why, but I have to do this here)
+      #if I do it literal in another dataframe, it gives a 
+      #ValueError: malformed node or string:
+      for index, row in self.main_database.iterrows():
+        try:
+          str_arr = self.main_database.loc[index, 'img_urls']
+          self.main_database.loc[index, 'img_url'] = ast.literal_eval(str_arr)[0]
+        except Exception as err:
+          pass
+          print("err: {} ".format(err))
+          print(self.main_database.loc[index, 'img_urls']) 
+
+      self.main_database["marketplace"] = self.main_database["scrap_meta.spider_marketplace"]
+      self.main_database["country"] = self.main_database["scrap_meta.spider_country"]
+
+      #save to dbs folder
+      self.main_database.to_csv(self.MAIN_DB_FILEPATH)
+      self.add_log_error("Database saved to CSV: {}.\n".format(scrap_filepath), 0) 
 
