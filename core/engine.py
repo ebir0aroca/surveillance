@@ -52,49 +52,55 @@ class Application:
 
   # Product Data model
   PRODUCT_DATAMODEL = {
-                "sku":str,
-                "title":str,
-                "category":str,
-                "source_category_url":str,
-                "product_pos_in_page":int,
-                "product_page":int,
-                "product_url":str,
-                "confs":str,
-                "hasVariants":bool,
-                "reviews_rating":float,
-                "reviews_count":int,
-                "currency":str,
-                "img_url":str,
-                "img_urls":str,
-                "seller":str,  
-                "price":float,
-                "EAN":str,
-                "description":str,
-                "isAvailableInShop":bool,
-                "isConfigurable":bool,
-                "isStoreBrand":bool,  
-                "isAvailableOnline":bool,
-                "isSpecialPrice":bool,
-                "onlineShippingCost":str,
+                "sku":str,      # product sku
+                "title":str,    # product main description
+                "category":str, # PROCESSED
+                "source_category_url":str, # product source category URL
+                "product_pos_in_page":int, # product position in category page reading from left to right and from top to buttom
+                "product_page":int,  # product page number in category page 
+                "product_url":str,   # product URL 
+                "confs":str,        # product configurations or variations dictionary
+                "hasVariants":bool, # if product has configurations or variations
+                "reviews_rating":float, # product average review rating
+                "reviews_count":int, # product review count
+                "currency":str, # product price currency
+                "img_url":str, # product first image url
+                "img_urls":str, # product images urls dictionary
+                "seller":str,  # product seller (if dropshipping)
+                "brand":str, # product brand
+                "price":float, # product price
+                "EAN":str,  # product EAN
+                "description":str, # product long description text
+                "isAvailableInShop":bool, # if product is available in the shop
+                "isConfigurable":bool, # same as hasVariants (TO BE DELETED)
+                "isStoreBrand":bool,  # PROCESSED
+                "isAvailableOnline":bool, # product is available online
+                "isSpecialPrice":bool,  # product has a special price (promotion)
+                "specialPrice":float,  # product special price (promotion)
+                "onlineShippingCost":str, 
                 "onlineShippingLeadtime":str,
                 "clickCollectLeadtime":str,
                 "clickAndCollectState":str,
                 "clickAndCollectAvailableQuantity":str,
                 "deliveryTimeText":str,
-                "specialPrice":float,
-                "brand":str,
-                "reviews":str,
-                "scrap_meta.guid":str,
-                "scrap_meta.maincategory_url":str,
-                "scrap_meta.spider_country":str,
-                "scrap_meta.spider_date_start":str,
-                "scrap_meta.spider_date_end":str,
-                "scrap_meta.spider_marketplace":str,
-                "scrap_meta.spider_name":str,
-                "scrap_meta.spider_version":str,
-                "scrap_meta.title":str
+                "reviews":str,  # product review in dictionary format
+                "scrap_meta.guid":str, # scrap process guid
+                "scrap_meta.maincategory_url":str, # scrap process starting url
+                "scrap_meta.spider_country":str, # scrap process website country (e.g. "de")
+                "scrap_meta.spider_date_start":str,  # scrap process starting time
+                "scrap_meta.spider_date_end":str,  # scrap process ending time
+                "scrap_meta.spider_marketplace":str,  # scrap process marketplace (e.g. "hornbach")
+                "scrap_meta.spider_name":str,  # scrap process spider name (e.g. "spider_hornbach_de") 
+                "scrap_meta.spider_version":str,  # scrap process version (e.g. "1.0")
+                "scrap_meta.title":str  # scrap process title (e.g. "spider for hornbach (Germany)")
   }
-  #"cct":float  
+  
+  PRODUCT_REVIEW_DATAMODEL =  {
+                "review_date": str,       #e.g. '2021-12-2' 
+                "review_heading": str,    #e.g. 'LED-Spegel', 
+                "review_rating": float,   #e.g. 5.0 
+                "review_body": str,       #e.g. ' Vacker Spegel. Lättinstallerad. '
+   }
 
   def __init__(self):
     pass
