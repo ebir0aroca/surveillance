@@ -156,7 +156,7 @@ class Application:
         scrap_list.append(os.path.join(self.SCRAP_PATH, scrap_file_name)) 
     return scrap_list
 
-  def translate_categories(self, scrap_df, categories_translate_tf): 
+  def translate_categories(self, scrap_df, scrap_filepath, categories_translate_tf): 
     # 1.1 Splits Breadcrumbs into categories for a given scrap dataframe  
     for i, row in scrap_df.iterrows():
       if(type(scrap_df.at[i,'breadcrumbs'])==list):
@@ -215,6 +215,7 @@ class Application:
               avoidRule = True 
               self.add_log_error(":::RULE IS WRONG. THE FILTER_NAME DOES NOT CORRESPOND WITH ANY SCRAPPED COLUMN :::\n" + 
                   "    Please check the configuration \n" +
+                  "    Scrap path: {}\n".format(scrap_filepath) +                                 
                   "    Rule Name: {}\n".format(rule_name) +
                   "    Scrapper {}.{} \n".format(marketplace, country) +
                   "        Target: ['{}'] == '{}']  \n".format(target_col_name, target_col_value) +
@@ -229,6 +230,7 @@ class Application:
               
             else:
               self.add_log_error(":::THE RESULT IS EMPTY, MAKE SURE THERE'S NO DATA IN THE WEBSITE:::\n" + 
+                  "    Scrap path: {}\n".format(scrap_filepath) +   
                   "    Rule Name: {}\n".format(rule_name) +
                   "    Scrapper {}.{} \n".format(marketplace, country) +
                   "        Target: ['{}'] == '{}']  \n".format(target_col_name, target_col_value) +
@@ -239,7 +241,7 @@ class Application:
     #engine.add_log_error
     return result_df
 
-  def set_default_values(self, scrap_df):   
+  def set_default_values(self, scrap_df, scrap_filepath):   
     scrap_df.loc[:,"creation_date"] = pd.to_datetime(scrap_df['scrap_meta.spider_date_start']).dt.date
     scrap_df['img_url'] = ''
     scrap_df.loc[:,'img_url'] = ''
@@ -263,12 +265,12 @@ class Application:
     return scrap_df
 
 
-  def set_isStoreBrand(self, scrap_df, store_brands):
+  def set_isStoreBrand(self, scrap_df, scrap_filepath, store_brands):
     scrap_df.loc[:,'isStoreBrand']=scrap_df['brand'].isin(store_brands)
     return scrap_df
 
 
-  def delete_irrelevant_data(self, scrap_df):
+  def delete_irrelevant_data(self, scrap_df, scrap_filepath):
     # Some data clean up
     del_columns = [col for col in scrap_df if 'Unnamed' in col]
     scrap_df.drop(columns=del_columns, inplace=True)
@@ -284,7 +286,8 @@ class Application:
                 inplace=True, errors='ignore')
     
     return scrap_df
+  
 
-  def set_data_types(self, scrap_df, product_datamodel):
+  def set_data_types(self, scrap_df, scrap_filepath, product_datamodel):
     return scrap_df.astype(product_datamodel)
 
