@@ -324,7 +324,7 @@ class Application:
       #ValueError: malformed node or string:
       for index, row in main_database.iterrows():
         try:
-          str_arr = self.main_database.loc[index, 'img_urls']
+          str_arr = main_database.loc[index, 'img_urls']
           main_database.loc[index, 'img_url'] = ast.literal_eval(str_arr)[0]
         except Exception as err:
           pass
