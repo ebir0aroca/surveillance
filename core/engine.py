@@ -68,6 +68,7 @@ class Application:
                 "img_urls":str, # product images urls dictionary
                 "seller":str,  # product seller (if dropshipping)
                 "brand":str, # product brand
+                "dropshipper":str, # product dropshipper
                 "price":float, # product price
                 "EAN":str,  # product EAN
                 "description":str, # product long description text
