@@ -342,8 +342,11 @@ class Application:
       main_database["marketplace"] = main_database["scrap_meta.spider_marketplace"]
       main_database["country"] = main_database["scrap_meta.spider_country"]
 
-      #save to dbs folder
-      
+      #create dbs directory in scrapfolder if not exists
+      if not os.path.exists(os.path.join(app.SCRAP_FOLDER, "dbs")):
+        os.mkdir(os.path.join(app.SCRAP_FOLDER, "dbs"))
+    
+      #save to dbs folder     
       with open(self.MAIN_DB_FILEPATH, "wb") as f:
         main_database.to_csv(f)
         self.add_log("Database saved to CSV: {}.\n".format(scrap_filepath), 0) 
