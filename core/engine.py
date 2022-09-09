@@ -311,6 +311,8 @@ class Application:
       
       #transform the data
       clean_scrap_db = scrap_db
+      if 'dropshipper' not in clean_scrap_db:
+        clean_scrap_db['dropshipper'] = 'RETAILER' 
       clean_scrap_db = self.translate_categories(clean_scrap_db, scrap_filepath, self.get_categories_translate_transf())
       clean_scrap_db = self.set_default_values(clean_scrap_db, scrap_filepath)
       clean_scrap_db = self.set_isStoreBrand(clean_scrap_db, scrap_filepath, self.get_store_brands_list())
