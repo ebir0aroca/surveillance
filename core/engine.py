@@ -344,7 +344,7 @@ class Application:
 
       #create dbs directory in scrapfolder if not exists
       if not os.path.exists(os.path.join(self.SCRAP_FOLDER, "dbs")):
-        os.mkdir(os.path.join(self.SCRAP_FOLDER, "dbs"))
+        os.mkdir(os.path.join(self.ROOT_DATA_PATH,  self.SCRAP_FOLDER, "dbs"))
     
       #save to dbs folder     
       with open(self.MAIN_DB_FILEPATH, "wb") as f:
