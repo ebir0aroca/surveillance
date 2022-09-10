@@ -114,7 +114,7 @@ class Application:
     self.MAIN_DB_FILEPATH = os.path.join(self.DBS_PATH, self.MAIN_DB_FILENAME)
   
   
-  @dbs_folderpath.getter
+  @property
   def dbs_folderpath(self):
     return os.path.join(self.ROOT_DATA_PATH,  self.SCRAP_FOLDER, "dbs")
   
