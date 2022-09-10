@@ -114,6 +114,9 @@ class Application:
     self.MAIN_DB_FILEPATH = os.path.join(self.DBS_PATH, self.MAIN_DB_FILENAME)
   
   
+  def dbs_folderpath(self):
+    return os.path.join(self.ROOT_DATA_PATH,  self.SCRAP_FOLDER, "dbs")
+  
   def remove_chars(s):
     s2 = re.sub(r'[^0-9.,]+', '', s)
     return s2.replace(",", ".")
@@ -343,8 +346,8 @@ class Application:
       main_database["country"] = main_database["scrap_meta.spider_country"]
 
       #create dbs directory in scrapfolder if not exists
-      if not os.path.exists(os.path.join(self.SCRAP_FOLDER, "dbs")):
-        os.mkdir(os.path.join(self.ROOT_DATA_PATH,  self.SCRAP_FOLDER, "dbs"))
+      if not os.path.exists(self.dbs_folderpath):
+        os.mkdir(self.dbs_folderpath)
     
       #save to dbs folder     
       with open(self.MAIN_DB_FILEPATH, "wb") as f:
